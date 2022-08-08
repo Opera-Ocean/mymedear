@@ -1,0 +1,11 @@
+.card{
+    height: 125px;
+    width: 125px;
+    padding: 10px;
+}
+
+ion-icon {
+    height: 80px;
+    align-self: center;
+    width: 80px;
+  }
