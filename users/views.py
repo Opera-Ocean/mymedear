@@ -37,7 +37,7 @@ class UserLoginAPI(KnoxLoginView):
             serializer.is_valid(raise_exception=True)
             user = serializer.validated_data['user']
             login(request, user)
-            return super(LoginAPI, self).post(request, format=None)
+            return super(UserLoginAPI, self).post(request, format=None)
         else:
             return Response({"non_field_errors":["unable to log in with provided credentials"]})
 
