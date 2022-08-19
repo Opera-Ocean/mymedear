@@ -1,13 +1,18 @@
 from django.contrib.auth import get_user_model, login
 from rest_framework import (
+	generics,
 	permissions,
 	viewsets
 	)
 from rest_framework.response import Response
 from rest_framework.authtoken.serializers import AuthTokenSerializer
 from knox.views import LoginView as KnoxLoginView
+from knox.models import AuthToken
 
-from .serializers import UserSerializer
+from .serializers import (
+	UserRegistrationSerializer,
+	UserSerializer
+	)
 from .permissions import (
 	ReadOnly,
 	IsOwnerOrReadOnly
@@ -22,7 +27,7 @@ class UserViewSet(viewsets.ModelViewSet):
 	permission_classes = [ReadOnly, IsOwnerOrReadOnly]
 
 
-class LoginAPI(KnoxLoginView):
+class UserLoginAPI(KnoxLoginView):
     permission_classes = [permissions.AllowAny]
 
     def post(self, request, format=None):
@@ -36,3 +41,16 @@ class LoginAPI(KnoxLoginView):
         else:
             return Response({"non_field_errors":["unable to log in with provided credentials"]})
 
+
+class UserSignUpAPI(generics.GenericAPIView):
+    serializer_class = UserRegistrationSerializer
+
+    def post(self, request, *args, **kwargs):
+        serializer = self.get_serializer(data=request.data)
+        serializer.is_valid(raise_exception=True)
+        user = serializer.save()
+        token = AuthToken.objects.create(user)
+        return Response({
+            "users": UserSerializer(user, context=self.get_serializer_context()).data,
+            "token": token[1]
+        })
