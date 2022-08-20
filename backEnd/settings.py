@@ -23,7 +23,7 @@ CLOUDINARY_API_Secret_Key = os.environ.get("CLOUDINARY_API_Secret_key")
 cloudinary.config(cloud_name='opera-ocean',
                   api_key=CLOUDINARY_API_Key,
                   api_secret=CLOUDINARY_API_Secret_Key,
-                  api_proxy='http://proxy.server:3128',
+                  # api_proxy='http://proxy.server:3128',
                   secure = True
                   )
 
@@ -47,6 +47,7 @@ INSTALLED_APPS = [
 
     # local apps
     'users.apps.UsersConfig',
+    'networks.apps.NetworksConfig',
 
     # third party apps
     'rest_framework',
