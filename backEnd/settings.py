@@ -12,17 +12,17 @@ STATIC_DIR = Path(BASE_DIR, 'static')
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-KEY = os.environ["MYMEDEAR_SECRET_KEY"]
+KEY = os.environ.get("MYMEDEAR_SECRET_KEY")
 SECRET_KEY = KEY
 
 # Configuration for Cloudinary images storage
 CLOUDINARY_API_Key = os.environ.get("CLOUDINARY_API_Key")
-CLOUDINARY_API_Secret_Key = os.environ.get("CLOUDINARY_API_Secret_key")
+# CLOUDINARY_API_Secret_Key = os.environ.get("CLOUDINARY_API_Secret_key")
 
 
 cloudinary.config(cloud_name='opera-ocean',
                   api_key=CLOUDINARY_API_Key,
-                  api_secret=CLOUDINARY_API_Secret_Key,
+                  api_secret='8th1kyRz18A91f_Lt0WiyY_NbUw',
                   secure = True
                   )
 # api_proxy='http://proxy.server:3128',  -- when using with pythonanywhere
