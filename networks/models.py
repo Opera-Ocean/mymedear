@@ -9,6 +9,7 @@ class Category(models.Model):
 		return self.name
 
 	class Meta:
+		ordering = ['name']
 		verbose_name = 'Category'
 		verbose_name_plural = 'Categories'
 
@@ -20,3 +21,6 @@ class Network(models.Model):
 
 	def __str__(self):
 		return self.name
+
+	class Meta:
+		ordering = ['name']
