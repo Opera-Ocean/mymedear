@@ -21,10 +21,10 @@ from .permissions import (
 User = get_user_model()
 
 
-class UserViewSet(viewsets.ModelViewSet):
+class UserList(generics.ListAPIView):
 	queryset = User.objects.all()
 	serializer_class = UserSerializer
-	permission_classes = [ReadOnly, IsOwnerOrReadOnly]
+	permission_classes = [permissions.IsAdminUser]
 
 
 class UserLoginAPI(KnoxLoginView):

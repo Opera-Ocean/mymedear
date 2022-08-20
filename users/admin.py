@@ -9,8 +9,3 @@ class UserAdmin(admin.ModelAdmin):
 
 admin.site.register(User, UserAdmin)
 
-"""
-	user:     Admin
-	email:    admin@mymedear.com
-	password: MyMeDearAdmin123
-"""
