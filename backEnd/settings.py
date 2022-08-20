@@ -16,8 +16,8 @@ KEY = os.environ["MYMEDEAR_SECRET_KEY"]
 SECRET_KEY = KEY
 
 # Configuration for Cloudinary images storage
-CLOUDINARY_API_Key = os.environ("CLOUDINARY_API_Key")
-CLOUDINARY_API_Secret_Key = os.environ("CLOUDINARY_API_Secret_key")
+CLOUDINARY_API_Key = os.environ.get["CLOUDINARY_API_Key"]
+CLOUDINARY_API_Secret_Key = os.environ.get["CLOUDINARY_API_Secret_key"]
 
 
 cloudinary.config(cloud_name='opera-ocean',
