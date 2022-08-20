@@ -7,13 +7,18 @@ from .views import (
 	UserSignUpAPI,
 	UserList
 	)
-from networks.views import UserNetworkViewSet
+from networks.views import (
+	UserNetworkViewSet,
+	PublicNetworkView
+	)
 
 router = routers.DefaultRouter()
 router.register('', UserNetworkViewSet, basename='user_network')
+# router.register('public', PublicNetworkViewSet, basename='user_public_network')
 
 
 urlpatterns = [
+	path('public/', PublicNetworkView.as_view(), name='public'),
 	path('signup/', UserSignUpAPI.as_view(), name='signup'),
 	path('login/', UserLoginAPI.as_view(), name='login'),
     path('logout/', knox_views.LogoutView.as_view(), name='logout'),

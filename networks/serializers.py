@@ -17,3 +17,11 @@ class UserNetworkSerializer(serializers.ModelSerializer):
 		model = UserNetwork
 		fields = ['user', 'network', 'url', 'name', 'html']
 
+
+class PublicNetworkSerializer(serializers.ModelSerializer):
+	user = serializers.StringRelatedField(read_only=True)
+	network = serializers.StringRelatedField(read_only=True)
+
+	class Meta:
+		model = UserNetwork
+		fields = ['user', 'network', 'url', 'name', 'html']
