@@ -1,0 +1,40 @@
+.card{
+    height: 125px;
+    width: 125px;
+    padding: 10px;
+}
+
+ion-icon {
+    height: 80px;
+    align-self: center;
+    width: 80px;
+  }
+
+h5{
+    font-size: 22px;
+}
+
+.modal-body{
+    display: flex;
+    justify-content: center;
+    align-self: center;
+}
+
+@media screen and (max-width: 480px) {
+    h5{
+    font-size: 15px;
+    }
+
+    .modal-body{
+        display: flex;
+        justify-content: center;
+        align-self: center;
+        padding: auto;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    h5{
+        font-size: 18px;
+    }
+}

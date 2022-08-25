@@ -1,0 +1,38 @@
+<div className="card" data-bs-toggle="modal" data-bs-target={unique}>
+                <h5 className="text-center">{name}</h5>
+                <ion-icon size="large" name={icon} color={color}></ion-icon>
+            </div>
+
+
+            <div className="modal fade" id={theModal} tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true">
+                <div className="modal-dialog">
+                    <div className="modal-content">
+                        {/* <div className="modal-header">
+                            <h5 className="modal-title" id="modalLabel">{name}</h5>
+                            <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> 
+                        </div> */}
+                        <div className="modal-body">
+                            <div class="badge-base LI-profile-badge" data-locale="en_US" data-size="medium" 
+                                data-theme="light" data-type="VERTICAL" data-vanity="oceanman" data-version="v1">
+                                <a class="badge-base__link LI-simple-link" 
+                                href="https://ng.linkedin.com/in/oceanman?trk=profile-badge"></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+<Modal
+                isOpen={modalIsOpen}
+                onRequestClose={closeModal}
+                style={customStyles}
+                contentLabel="Network Modal">
+                    <div className="badge-base LI-profile-badge" data-locale="en_US" data-size="medium" 
+                        data-theme="light" data-type="VERTICAL" data-vanity="oceanman" data-version="v1">
+                        <a className="badge-base__link LI-simple-link" 
+                        href="https://ng.linkedin.com/in/oceanman?trk=profile-badge"></a>
+                    </div>
+            </Modal>
+            

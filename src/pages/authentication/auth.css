@@ -1,0 +1,47 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.centeredButton{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.social-signup{
+    width: 880px;
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+@media screen and (max-width: 600px) {
+    .social-signup{
+        width: 480px;
+        margin-top: 30px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+
+@media screen and (max-width: 480px) {
+    .social-signup{
+        width: 360px;
+        margin-top: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}

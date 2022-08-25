@@ -1,0 +1,166 @@
+.button{
+    background-color: #1b9fe9;
+    height: 40px;
+    width: 100px;
+    border-radius: 20px;
+    border: none;
+    margin: 20px;
+    color: aliceblue;
+    font-size: 20px;
+}
+
+.button:hover{
+    background-color: #1b9fe9;
+    height: 40px;
+    width: 98px;
+    border-radius: 20px;
+    border: none;
+    margin: 20px;
+    color: aliceblue;
+    font-size: 20px;
+}
+
+ .frameContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.frame{ 
+    padding: 40px;
+    width: 256px; 
+    height: 256px
+} 
+
+.field{
+    width: 512px;
+    border: 0;
+    border-bottom: solid 1px #272a2d;
+    outline: none;
+    margin-bottom: 10px;
+}
+
+.socialButton{
+    background-color: rgb(255, 186, 169);
+    height: 50px;
+    width: 480px;
+    border-radius: 20px;
+    border: none;
+    margin: 1px;
+    color: #272a2d;
+    font-size: 24px;
+}
+
+
+@media screen and (max-width: 480px) {
+    .button{
+        background-color: #1b9fe9;
+        height: 24px;
+        width: 70px;
+        border-radius: 15px;
+        border: none;
+        margin: 20px;
+        color: aliceblue;
+        font-size: 15px;
+    }
+
+    .button:hover{
+        background-color: #1b9fe9;
+        height: 24px;
+        width: 68px;
+        border-radius: 15px;
+        border: none;
+        margin: 20px;
+        color: aliceblue;
+        font-size: 15px;
+    }
+
+    .frame{ 
+        padding: 24px;
+        width: 210px; 
+        height: 210px
+    } 
+
+    .fieldContainer{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    icon-style{
+        color: '#272a2d'; 
+        height: '24px'; 
+        width: '24px'; 
+        margin-right: '40px'
+    }
+
+    .field{
+        width: 256px;
+        border: 0;
+        border-bottom: solid 1px #272a2d;
+        outline: none;
+        margin-bottom: 10px;
+    }
+
+    .socialButton{
+        background-color: rgb(255, 186, 169);
+        height: 45px;
+        width: 360px;
+        border-radius: 20px;
+        border: none;
+        margin: 1px;
+        color: #272a2d;
+        font-size: 16px
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .button{
+        background-color: #1b9fe9;
+        height: 30px;
+        width: 80px;
+        border-radius: 15px;
+        border: none;
+        margin: 20px;
+        color: aliceblue;
+        font-size: 15px;
+    }
+
+    .button:hover{
+        background-color: #1b9fe9;
+        height: 30px;
+        width: 78px;
+        border-radius: 15px;
+        border: none;
+        margin: 20px;
+        color: aliceblue;
+        font-size: 15px;
+    }
+
+    .frame{ 
+        padding: 28px;
+        width: 220px; 
+        height: 220px
+    } 
+
+    .field{
+        width: 256px;
+        border: 0;
+        border-bottom: solid 1px #272a2d ;
+        outline: none;
+        margin-bottom: 10px;
+    }
+
+    .socialButton{
+        background-color: rgb(255, 186, 169);
+        height: 40px;
+        width: 256px;
+        border-radius: 20px;
+        border: none;
+        margin: 1px;
+        color: #272a2d;
+        font-size: 24px;
+    }
+}
+
+
