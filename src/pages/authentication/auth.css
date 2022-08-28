@@ -1,7 +1,8 @@
-.container{
+.panel{
     display: flex;
     flex-direction: column;
-    padding: 20px;
+    justify-content: space-around;
+    padding: 40px;
 }
 
 .form{
@@ -10,14 +11,15 @@
     padding: 20px;
 }
 
-.centeredButton{
+.centered-button{
     display: flex;
     flex-direction: column;
+    margin: 24px;
     align-items: center;
 }
 
 .social-signup{
-    width: 880px;
+    width: 760px;
     margin-top: 40px;
     display: flex;
     flex-direction: column;
@@ -26,6 +28,13 @@
 
 
 @media screen and (max-width: 600px) {
+    .panel{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        padding: 15px;
+    }
+
     .social-signup{
         width: 480px;
         margin-top: 30px;
@@ -37,6 +46,13 @@
 
 
 @media screen and (max-width: 480px) {
+    .panel{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        padding: 10px;
+    }
+
     .social-signup{
         width: 360px;
         margin-top: 20px;

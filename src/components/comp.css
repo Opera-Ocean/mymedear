@@ -73,10 +73,10 @@
     margin-bottom: 10px;
 }
 
-.socialButton{
+.social-button{
     background-color: rgb(255, 186, 169);
     height: 50px;
-    width: 480px;
+    width: 512px;
     border-radius: 20px;
     border: none;
     margin: 1px;
@@ -144,22 +144,23 @@
     }
 
     .field{
-        width: 80px;
+        width: 256px;
         border: 0;
         border-bottom: solid 1px #272a2d;
         outline: none;
         margin-bottom: 10px;
     }
 
-    .socialButton{
+    .social-button{
         background-color: rgb(255, 186, 169);
         height: 45px;
-        width: 360px;
+        width: 320px;
         border-radius: 20px;
         border: none;
         margin: 1px;
         color: #272a2d;
-        font-size: 16px
+        font-size: 16px;
+        align-self: center
     }
 }
 
@@ -217,22 +218,23 @@
     }
 
     .field{
-        width: 120px;
+        width: 480px;
         border: 0;
         border-bottom: solid 1px #272a2d ;
         outline: none;
         margin-bottom: 10px;
     }
 
-    .socialButton{
+    .social-button{
         background-color: rgb(255, 186, 169);
         height: 40px;
-        width: 256px;
+        width: 360px;
         border-radius: 20px;
         border: none;
         margin: 1px;
         color: #272a2d;
         font-size: 24px;
+        align-content: center;
     }
 }
 

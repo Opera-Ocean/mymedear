@@ -14,7 +14,7 @@ export const CustomButton = ({otherStyle, text}) =>{
 
 export const SocialButton = ({icon, text}) =>{
     return(
-        <button className='socialButton'>
+        <button className='social-button'>
             <BaseIcon icon={icon} />
             {text}
         </button>

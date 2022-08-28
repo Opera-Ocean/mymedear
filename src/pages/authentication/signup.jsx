@@ -4,6 +4,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import NetworkDisplay from "../../components/networkDisplay";
 import Field from "../../components/fields/input";
 import {CustomButton, SocialButton} from "../../components/buttons";
+import SocialSignup from "../partials/social";
 import './auth.css';
 
 const Signup = () =>{
@@ -63,29 +64,24 @@ const getLoginData = async () =>{
         <section>
           <NetworkDisplay />
 
-          <div className="container">
+          <div className="panel">
             <h1>Sign up</h1>
           </div>
 
-          <form className="container" method="POST">
+          <form className="panel" method="POST">
             <Field icon="person-outline" type="text" place="Username" />
             <Field icon="mail-outline" type="email" place="Email" />
             <Field icon="lock-closed-outline" type="password" place="Password" />
-            <div className="centeredButton">
-              <CustomButton text="Signup" />
+            <div className="centered-button">
+              <CustomButton otherStyle={{
+                paddingRight: "10px",
+                paddingLeft: "10px",
+                borderRadius: "5px"
+              }} text="Signup" />
             </div>
           </form>
 
-          <div className="social-signup">
-            <h2>OR</h2>
-            <SocialButton icon="logo-google" text="Login with Google" />
-            <SocialButton icon="logo-facebook" text="Login with Facebook" />
-          </div>
-
-          <div className="social-signup">
-            <h4> Already have an account? </h4>
-            <a href="#"> Login </a>
-          </div>
+          <SocialSignup authText="Already have an account?" auth="Login" />
 
         </section>
       )

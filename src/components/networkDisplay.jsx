@@ -6,12 +6,12 @@ import './comp.css';
 const NetworkDisplay = () =>{
 
     return(
-        <div className="frameContainer">
+        <div className="frame-container">
             <iframe className="frame" 
                 frameBorder="0" src="https://imgflip.com/embed/6qnagj">
             </iframe>
             <p>
-                <a href="https://imgflip.com/gif/6qnagj">   
+                <a style={{textDecoration: "none"}}>   
                     <AppTitle />
                 </a>
             </p>
@@ -21,3 +21,6 @@ const NetworkDisplay = () =>{
 
 export default NetworkDisplay;
 
+/*
+    https://imgflip.com/gif/6qnagj
+*/
