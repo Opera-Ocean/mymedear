@@ -1,8 +1,36 @@
+.title-container{
+    padding: 10px
+}
+
+.title{
+    font-size: 40px;
+    font-family: Billabong;
+}
+
+.top-tab{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 5px 0 0 40px;
+}
+
+.icon-text{
+    font-size: small;
+    text-align: center;
+}
+
+.lower-top-tab{
+    display: flex;
+    flex-direction: row;
+    padding: 10px 0 0 40px;
+    justify-content: space-between;
+}
+
 .button{
     background-color: #1b9fe9;
-    height: 40px;
-    width: 100px;
-    border-radius: 20px;
+    height: fit-content;
+    width: fit-content;
+    border-radius: 30px;
     border: none;
     margin: 20px;
     color: aliceblue;
@@ -11,16 +39,16 @@
 
 .button:hover{
     background-color: #1b9fe9;
-    height: 40px;
-    width: 98px;
-    border-radius: 20px;
+    height: fit-content;
+    width: fit-content;
+    border-radius: 30px;
     border: none;
     margin: 20px;
     color: aliceblue;
     font-size: 20px;
 }
 
- .frameContainer{
+ .frame-container{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -31,6 +59,11 @@
     width: 256px; 
     height: 256px
 } 
+
+.field-container{
+    display: flex;
+    flex-direction: row;
+}
 
 .field{
     width: 512px;
@@ -53,10 +86,33 @@
 
 
 @media screen and (max-width: 480px) {
+    .title{
+        font-size: 28px;
+        font-family: Billabong;
+    }
+
+    .top-tab{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 2px 0 0 10px;
+    }
+
+    .icon-text{
+        display: none;
+    }
+    
+    .lower-top-tab{
+        display: flex;
+        flex-direction: row;
+        padding: 4px 0 0 10px;
+        justify-content: space-between;
+    }
+
     .button{
         background-color: #1b9fe9;
-        height: 24px;
-        width: 70px;
+        height: fit-content;
+        width: fit-content;
         border-radius: 15px;
         border: none;
         margin: 20px;
@@ -66,8 +122,8 @@
 
     .button:hover{
         background-color: #1b9fe9;
-        height: 24px;
-        width: 68px;
+        height: fit-content;
+        width: fit-content;
         border-radius: 15px;
         border: none;
         margin: 20px;
@@ -81,21 +137,14 @@
         height: 210px
     } 
 
-    .fieldContainer{
+    .field-container{
         display: flex;
         flex-direction: row;
         justify-content: space-around;
     }
 
-    icon-style{
-        color: '#272a2d'; 
-        height: '24px'; 
-        width: '24px'; 
-        margin-right: '40px'
-    }
-
     .field{
-        width: 256px;
+        width: 80px;
         border: 0;
         border-bottom: solid 1px #272a2d;
         outline: none;
@@ -115,10 +164,29 @@
 }
 
 @media screen and (max-width: 600px) {
+    .title{
+        font-size: 34px;
+        font-family: Billabong;
+    }
+
+    .top-tab{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 2px 0 0 15px;
+    }
+    
+    .lower-top-tab{
+        display: flex;
+        flex-direction: row;
+        padding: 4px 0 0 15px;
+        justify-content: space-between;
+    }
+
     .button{
         background-color: #1b9fe9;
-        height: 30px;
-        width: 80px;
+        height: fit-content;
+        width: fit-content;
         border-radius: 15px;
         border: none;
         margin: 20px;
@@ -128,8 +196,8 @@
 
     .button:hover{
         background-color: #1b9fe9;
-        height: 30px;
-        width: 78px;
+        height: fit-content;
+        width: fit-content;
         border-radius: 15px;
         border: none;
         margin: 20px;
@@ -143,8 +211,13 @@
         height: 220px
     } 
 
+    .field-container{
+        display: flex;
+        flex-direction: row;
+    }
+
     .field{
-        width: 256px;
+        width: 120px;
         border: 0;
         border-bottom: solid 1px #272a2d ;
         outline: none;

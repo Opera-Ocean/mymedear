@@ -1,5 +1,6 @@
 import React from 'react';
 
+import AppTitle from './appTitle';
 import './comp.css';
 
 const NetworkDisplay = () =>{
@@ -11,7 +12,7 @@ const NetworkDisplay = () =>{
             </iframe>
             <p>
                 <a href="https://imgflip.com/gif/6qnagj">   
-                    MyMeDear
+                    <AppTitle />
                 </a>
             </p>
         </div>  

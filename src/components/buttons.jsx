@@ -3,10 +3,11 @@ import React from 'react';
 import { BaseIcon } from './icons';
 import './comp.css';
 
-export const CustomButton = ({text}) =>{
+export const CustomButton = ({otherStyle, text}) =>{
     return(
-        <button className='button'>
-            {text}
+        <button className='button'
+            style={otherStyle}>
+            {text} 
         </button>
     )
 }

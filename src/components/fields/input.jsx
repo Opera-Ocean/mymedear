@@ -5,9 +5,9 @@ import '../comp.css';
 
 const Field = ({icon, type, place, value, handleClick}) =>{
     return(
-        <div className="fieldContainer">
-            <BaseIcon icon={icon} />
+        <div className="field-container">
             <input className="field" type={type} placeholder={place} value={value} onClick={handleClick} />
+            <BaseIcon icon={icon} />
         </div>
     )
 }
