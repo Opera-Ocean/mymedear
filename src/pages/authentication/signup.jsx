@@ -1,90 +1,134 @@
 import React, { useState, useEffect } from "react";
-import AsyncStorage from '@react-native-async-storage/async-storage';
+import AsyncStorage from "@react-native-async-storage/async-storage";
+import { useForm } from "react-hook-form";
 
 import NetworkDisplay from "../../components/networkDisplay";
 import Field from "../../components/fields/input";
-import {CustomButton, SocialButton} from "../../components/buttons";
+import { CustomButton, SocialButton } from "../../components/buttons";
 import SocialSignup from "../partials/social";
-import './auth.css';
+import "./auth.css";
+import useAuth from "../../hooks/useAuth";
+import { useNavigate } from "react-router-dom";
 
-const Signup = () =>{
-  const[isLoading, setIsLoading] = useState(false);
-  const[email, setEmail] = useState();
-  const[username, setUsername] = useState();
-  const[password, setPassword] = useState();
-  const[meDearData, setMeDearData] = useState({});
+const Signup = () => {
+  const navigate = useNavigate();
+  const [isLoading, setIsLoading] = useState(false);
+  const [email, setEmail] = useState();
+  const [username, setUsername] = useState();
+  const [password, setPassword] = useState();
+  const [meDearData, setMeDearData] = useState({});
 
-  const storeData = async (value) => {
+  const { registerUser, checkAuthenticated } = useAuth();
+
+  /*const storeData = async (value) => {
     try {
-      await AsyncStorage.setItem('meDearData', JSON.stringify(value))
+      await AsyncStorage.setItem("meDearData", JSON.stringify(value));
     } catch (error) {
       console.log("Error! Could not process login successfully");
-      console.log(error)
+      console.log(error);
     }
-  }
+  };
 
-const getLoginData = async () =>{
+  const getLoginData = async () => {
     setIsLoading(true);
-    await fetch('https://mymedear.com/auth/signup', {
-    method: 'POST', 
-    headers: {
-        'Content-Type': 'application/json',
-    },
-    body: JSON.stringify({
+    await fetch("https://mymedear.com/auth/signup", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
         email: email,
         username: username,
-        password: password
-        }),
+        password: password,
+      }),
     })
-
-    .then((response) => response.json())
-    .then(data => {
+      .then((response) => response.json())
+      .then((data) => {
         setIsLoading(false);
         if (data.ID > 0) {
-            storeData();
-            setMeDearData(data);
-            storeData(data);
-            console.log("Successfully logged in");
-            // navigation.navigate("Home", { data: data });
-        }
+          storeData();
+          setMeDearData(data);
+          storeData(data);
+          console.log("Successfully logged in");
+          // navigation.navigate("Home", { data: data });
+        } else {
         /* else if(email === '' || password === ''){
             console.log('Cannot enter leave any field blank.')
-        } */
-        else {
-            console.log("Wrong credentials");
+        } 
+          console.log("Wrong credentials");
         }
-    })
-    .catch(() => {
+      })
+      .catch(() => {
         console.log("Network error! Check your internet");
         setIsLoading(false);
-    });
+      });
+  }; */
 
-}
-      return(
-        <section>
-          <NetworkDisplay />
+  const { register, handleSubmit } = useForm();
 
-          <div className="panel">
-            <h1>Sign up</h1>
-          </div>
+  const onSubmit = async (data) => {
+    setIsLoading(true);
+    return registerUser(data)
+      .then((res) => {
+        if (res) {
+          navigate("/");
+        }
+      })
+      .catch((err) => {})
+      .finally(() => {
+        setIsLoading(false);
+      });
+  };
 
-          <form className="panel" method="POST">
-            <Field icon="person-outline" type="text" place="Username" />
-            <Field icon="mail-outline" type="email" place="Email" />
-            <Field icon="lock-closed-outline" type="password" place="Password" />
-            <div className="centered-button">
-              <CustomButton otherStyle={{
-                paddingRight: "10px",
-                paddingLeft: "10px",
-                borderRadius: "5px"
-              }} text="Signup" />
-            </div>
-          </form>
+  return (
+    <section>
+      <NetworkDisplay />
 
-          <SocialSignup authText="Already have an account?" auth="Login" />
+      <div className="panel">
+        <h1>Sign up</h1>
+      </div>
 
-        </section>
-      )
-}
+      <form className="panel" onSubmit={handleSubmit(onSubmit)}>
+        <Field
+          icon="person-outline"
+          type="text"
+          place="Username"
+          register={register}
+          name="username"
+          required
+        />
+        <Field
+          icon="mail-outline"
+          type="email"
+          place="Email"
+          register={register}
+          name="email"
+          required
+        />
+        <Field
+          icon="lock-closed-outline"
+          type="password"
+          place="Password"
+          register={register}
+          name="password"
+          required
+        />
+        <div className="centered-button">
+          <CustomButton
+            otherStyle={{
+              paddingRight: "10px",
+              paddingLeft: "10px",
+              borderRadius: "5px",
+            }}
+            text="Signup"
+            type="submit"
+          />
+        </div>
+      </form>
+
+      <SocialSignup authText="Already have an account?" auth="Login" />
+    </section>
+  );
+};
 
 export default Signup;
