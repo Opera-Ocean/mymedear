@@ -225,6 +225,14 @@
         margin-bottom: 10px;
     }
 
+    .search-field{
+        width: 320px;
+        border: 0;
+        border-bottom: solid 1px #272a2d ;
+        outline: none;
+        margin-bottom: 10px;
+    }
+
     .social-button{
         background-color: rgb(255, 186, 169);
         height: 40px;

@@ -4,7 +4,6 @@ import NavigationBar from "../../components/navBar";
 import UserDisplay from "../partials/user";
 import Status from "../partials/status";
 import Settings from "../partials/settings";
-import { SmallIcon } from "../../components/icons";
 import './users.css';
 
 const Profile = () =>{
@@ -16,8 +15,6 @@ const Profile = () =>{
           <UserDisplay />
           <Status />
           <Settings />
-
-          
         </section>
       )
 }

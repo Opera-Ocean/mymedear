@@ -7,6 +7,7 @@ function ProtectedRouter({ children }) {
   const expireTime = moment(localStorage.getItem("expireTime"));
   const presentTime = moment();
   const isValid = moment(expireTime).isAfter(presentTime);
+  let location = useLocation();
 
   useEffect(() => {
     const checkValid = () => {
@@ -19,7 +20,6 @@ function ProtectedRouter({ children }) {
     checkValid();
   }, []);
 
-  let location = useLocation();
 
   if (!token || !isValid) {
     return <Navigate to="/login" state={{ from: location }} />;

@@ -1,7 +1,7 @@
-import React from 'react';
+import React, {useState} from 'react';
 
 import AppTitle from './appTitle';
-import Field from './fields/input';
+import SearchField from './fields/search';
 import { SmallIcon } from './icons';
 import NavigationItem from './navItem';
 
@@ -10,7 +10,7 @@ const NavigationBar = () =>{
         <section>
             <div className="top-tab">
                 <AppTitle />
-                <Field icon="search-outline" />
+                {/* <SearchField icon="search-outline" /> */}
                 <SmallIcon icon="earth-outline" />
             </div>
             
