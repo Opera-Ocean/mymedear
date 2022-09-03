@@ -54,3 +54,9 @@ class UserSignUpAPI(generics.GenericAPIView):
             "users": UserSerializer(user, context=self.get_serializer_context()).data,
             "token": token[1]
         })
+
+
+class UserDetailAPIView(generics.RetrieveAPIView):
+    queryset = User.objects.all()
+    serializer_class = UserSerializer
+    permission_classes = [permissions.IsAuthenticated]

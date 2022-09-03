@@ -5,7 +5,8 @@ from knox import views as knox_views
 from .views import (
 	UserLoginAPI,
 	UserSignUpAPI,
-	UserList
+	UserList,
+	UserDetailAPIView
 	)
 from networks.views import (
 	UserNetworkViewSet,
@@ -22,7 +23,8 @@ urlpatterns = [
 	path('signup/', UserSignUpAPI.as_view(), name='signup'),
 	path('login/', UserLoginAPI.as_view(), name='login'),
     path('logout/', knox_views.LogoutView.as_view(), name='logout'),
-    path('users/', UserList.as_view(), name='users')
+    path('users/', UserList.as_view(), name='users'),
+    path('users/<int:pk>/', UserDetailAPIView.as_view(), name='user-detail')
 ] + router.urls
 
 
@@ -32,5 +34,6 @@ urlpatterns = [
 		"username": "admin@mymedear.com",
 		"password": "MyMeDearAdmin123"
 	}
+
 """
 

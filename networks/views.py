@@ -9,10 +9,11 @@ from .serializers import (
 	UserNetworkSerializer,
 	PublicNetworkSerializer
 	)
+from users.permissions import IsOwnerOrReadOnly
 
 
 class UserNetworkViewSet(viewsets.ModelViewSet):
-	permission_classes = [permissions.IsAuthenticated]
+	permission_classes = [IsOwnerOrReadOnly]
 	serializer_class = UserNetworkSerializer
 
 	def get_queryset(self):
