@@ -1,0 +1,10 @@
+.network{
+    padding: 15px;
+    margin-top: 40px;
+}
+
+.feeds{
+    display: flex;
+    padding: 40px;
+    flex-direction: column;
+}

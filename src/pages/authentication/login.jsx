@@ -27,7 +27,7 @@ const Login = () => {
       .then((res) => {
         console.log(res);
         if (res) {
-          navigate("/");
+          navigate("/profile");
         }
       })
       .catch((err) => {})

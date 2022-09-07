@@ -1,11 +1,12 @@
 import React from "react";
+import useNavigate from "react-router-dom";
 
 import { BaseIcon } from "./icons";
 import "./comp.css";
 
-export const CustomButton = ({ otherStyle, text, type }) => {
+export const CustomButton = ({ otherStyle, text, handleClick }) => {
   return (
-    <button className="button" style={otherStyle} type={type}>
+    <button className="button" style={otherStyle} onClick={handleClick}>
       {text}
     </button>
   );
@@ -19,3 +20,11 @@ export const SocialButton = ({ icon, text }) => {
     </button>
   );
 };
+
+export const BackButton = ({handleClick}) =>{
+  return(
+    <button className="back" onClick={handleClick}>
+        <BaseIcon icon="arrow-back" />
+    </button>
+  )
+}

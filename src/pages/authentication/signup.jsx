@@ -26,7 +26,7 @@ const Signup = () => {
     return registerUser(data)
       .then((res) => {
         if (res) {
-          navigate("/");
+          navigate("/profile");
         }
       })
       .catch((err) => {})

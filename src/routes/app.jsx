@@ -5,7 +5,7 @@ import {
   Route 
 } from "react-router-dom";
 
-import Index from "../pages/app/index";
+import IndexPage from "../pages";
 import About from "../pages/app/about";
 import Error from "../pages/app/error";
 import Profile from "../pages/users/profile";
@@ -23,9 +23,7 @@ const Navigation = () => {
           path="/"
           exact
           element={
-            <ProtectedRouter>
-              <Index />
-            </ProtectedRouter>
+              <IndexPage />
           }
         />
         <Route

@@ -12,7 +12,7 @@ const NetworkDisplay = () =>{
             </iframe>
             <p>
                 <a style={{textDecoration: "none"}}>   
-                    <AppTitle />
+                    <AppTitle text="MyMeDear" />
                 </a>
             </p>
         </div>  

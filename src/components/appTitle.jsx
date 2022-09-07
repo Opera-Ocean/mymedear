@@ -2,10 +2,10 @@ import React from 'react';
 
 import './comp.css';
 
-const AppTitle = ()  =>{
+const AppTitle = ({text})  =>{
     return(
         <div className="title-container">
-            <h4 className="title"> MyMeDear </h4>
+            <h4 className="title"> {text} </h4>
         </div>
     )
 }

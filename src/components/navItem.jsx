@@ -3,11 +3,13 @@ import React from 'react';
 import "./comp.css";
 import { BaseIcon } from './icons';
 
-const NavigationItem = ({icon, title}) =>{
+const NavigationItem = ({icon, title, handleClick}) =>{
     return(
         <div>
-            <BaseIcon icon={icon} />
-            <p className="icon-text"> {title} </p>
+            <a onClick={handleClick}>
+                <BaseIcon icon={icon} />
+                <p className="icon-text"> {title} </p>
+            </a>
         </div>
     )
 }

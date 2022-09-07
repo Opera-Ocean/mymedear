@@ -79,6 +79,11 @@ button{
     justify-content: center;
 }
 
+a{
+    text-decoration: none;
+    cursor: pointer;
+}
+
 @media screen and (max-width: 480px) {
     .row{
         display: flex;
