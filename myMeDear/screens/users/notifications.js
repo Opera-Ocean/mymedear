@@ -5,17 +5,16 @@ import {
     Text
 } from 'react-native';
 
-import styles from './styles';
+import styles from '../styles';
 
-const Index = () =>{
-    
+const Notifications = () =>{
     return(
         <View>
             <Text style={styles.paragraph}>
-                Index Screen
+                Notifications Screen
             </Text>
         </View>
     )
 }
 
-export default Index;
+export default Notifications;
